@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import GridLayout from "react-grid-layout";
 import "react-grid-layout/css/styles.css";
 import "react-resizable/css/styles.css";
 
 const MyGrid = () => {
+
+ const [layouts, setLayout] = useState();
+
   // Define the layout for grid items
   const layout = [
     { i: "1", x: 0, y: 0, w: 2, h: 2 },
@@ -11,6 +14,7 @@ const MyGrid = () => {
     { i: "3", x: 6, y: 0, w: 2, h: 2 },
   ];
 
+  console.log(layouts,"layouts")
   return (
     <div style={{ padding: "20px", }}>
       <h2 style={{ fontSize: "20px", fontWeight: "bold", marginBottom: "10px" }}>
@@ -24,6 +28,7 @@ const MyGrid = () => {
         width={1000} // Total width of the grid in pixels
         isDraggable={true} // Enable dragging
         isResizable={true} // Enable resizing
+        onLayoutChange={(newLayout) => setLayout(newLayout)}
       >
         {/* Grid Items with inline styles */}
         <div key="1" style={{ background: "#87CEFA", display: "flex", alignItems: "center", justifyContent: "center", border: "1px solid black" }}>1</div>
