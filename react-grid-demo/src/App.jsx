@@ -1,3 +1,4 @@
+import GridDemo from "./GridDemo"
 import MyGrid from "./MyGrid"
 
 function App() {
@@ -5,6 +6,7 @@ function App() {
   return (
     <>
       <MyGrid/>
+      <GridDemo/>
     </>
   )
 }
